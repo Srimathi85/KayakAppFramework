@@ -15,6 +15,6 @@ Examples:
     |Origin|Destination|
     |Bengaluru (BLR)|San Francisco (SFO)|
     |San Francisco (SFO)|Chennai (MAA)  |
-
+    |Chennai (MAA)  |San Francisco (SFO)|
 
 

@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="FrameworkSalesForce">
+    <test name="com.kayakWebApp.RunnerFile">
+        <classes>
+            <class name="com.kayakWebApp.RunnerFile.RunnerFileKayak">
+            </class>
+        </classes>
+    </test>
+  
+</suite>

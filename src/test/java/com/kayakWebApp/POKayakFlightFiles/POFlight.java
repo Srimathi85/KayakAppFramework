@@ -74,10 +74,10 @@ public class POFlight extends TestBase {
     }
     public void selectOriginNearByAirports() throws InterruptedException {
         //Select NearBy Airport Option
-       // oSelUtility.waitForElementVisible(origin_nearby, 5, driver);
+        oSelUtility.waitForElementVisible(origin_nearby, 5, driver);
        // driver.findElement(By.xpath("//div[contains(@id,'-origin-airport-display')]")).click();
        oSelUtility.clickOnElement(origin_nearby,"Origin NearBy");
-       // oSelUtility.waitForElementVisible(origin_inputNearby, 5, driver);
+        oSelUtility.waitForElementVisible(origin_inputNearby, 5, driver);
         oSelUtility.clickOnElement(origin_inputNearby,"Origin NearBy Option");
         oActions.pause(1000).doubleClick().build().perform();
     }
@@ -92,6 +92,7 @@ public class POFlight extends TestBase {
 
     public void selectDestinationNearByAirports(){
         //Select NearBy Airport Option
+
         oSelUtility.clickOnElement(destination_box,"Origin NearBy");
         oSelUtility.clickOnElement(destination_nearby,"Origin NearBy Option");
         oActions.pause(1000).doubleClick().build().perform();
@@ -112,11 +113,12 @@ public class POFlight extends TestBase {
     }
     public void getSearchResult() throws InterruptedException {
         oSelUtility.waitForElementVisible(search_result,5,driver);
-        for (WebElement element:search_results) {
-            if(element.getText().contains(sOrigin)  &&element.getText().contains(sDestination)){
-                System.out.println("Search Result is verified");
+      //  for (WebElement element:search_results) {
+            if(driver.getPageSource().contains(sOrigin) && driver.getPageSource().contains(sDestination)){
+           // if(element.getText().contains(sOrigin)  &&element.getText().contains(sDestination)){
+                System.out.println("Search Result is verified for "+sDestination+"    "+sOrigin);
             }else System.out.println("Search Result is  not verified");
-        }
+       // }
         Thread.sleep(5000);
 oSelUtility.closeReport();
 oSelUtility.closeBrowser();
