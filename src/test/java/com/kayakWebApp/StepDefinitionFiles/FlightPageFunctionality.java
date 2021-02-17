@@ -46,11 +46,10 @@ POFlight oPOFlight;
     @When("Enter origin Airport {string}")
     public void user_enters_origin(String string) throws IOException, InterruptedException {
         oPOFlight.enterOrigin(string);
-
         log.info("User enters {string} ");
     }
     @When("Select origin Nearby Airport")
-    public void select_origin_nearby_airport() throws InterruptedException {
+    public void select_origin_nearby_airport() throws InterruptedException, IOException {
         oPOFlight.selectOriginNearByAirports();
         log.info("Origin Nearby airport is selected");
     }
@@ -70,20 +69,21 @@ POFlight oPOFlight;
     @When("Select  Departure and Return Dates")
     public void select_departure_and_return_dates() {
         oPOFlight.selectFromDate();
-        System.out.println("Select  Departure and Return Dates");
+        oPOFlight.selectReturnDate();
+        log.info("Select  Departure and Return Dates");
     }
 
     @When("Click Search")
     public void click_search() {
         oPOFlight.clickSearch();
-        System.out.println("Click Search");
+       log.info("Click Search");
     }
 
     @Then("The flight details for entered the Origin and Destination Details are displayed")
     public void the_flight_details_for_entered_the_origin_and_destination_details_are_displayed() throws InterruptedException {
         oPOFlight.getSearchResult();
 
-        System.out.println("The flight details for entered the Origin and Destination Details are displayed");
+        log.info("The flight details for entered the Origin and Destination Details are displayed");
     }
 
 }

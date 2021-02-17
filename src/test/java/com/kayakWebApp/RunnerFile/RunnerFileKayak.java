@@ -7,9 +7,9 @@ import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 import org.testng.annotations.Listeners;
 
-
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src/test/FeaturesFiles/FlightFeatures.feature",glue = {"com.kayakWebApp.StepDefinitionFiles"},monochrome=true,plugin= {"pretty","html:test-outout", "json:json_output/cucumber.json", "junit:junit_xml/cucumber.xml"})
+@Listeners(com.kayakWebApp.UtilityFiles.ListenterCustom.class)
 public class RunnerFileKayak {
 
 }
